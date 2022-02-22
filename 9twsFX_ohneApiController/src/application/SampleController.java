@@ -64,7 +64,6 @@ public class SampleController {
 	List<String> accountList() 	{ return m_acctList; }
     
     
-	
     
     
 	ILogger getInLogger()            { return m_inLogger; }
