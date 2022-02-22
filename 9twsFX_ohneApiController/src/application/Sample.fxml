@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="720.0" minWidth="1200.0" prefHeight="720.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SampleController">
+   <children>
+      <HBox alignment="CENTER" style="-fx-border-color: black;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox alignment="CENTER" minWidth="900.0" prefWidth="900.0" HBox.hgrow="SOMETIMES">
+               <children>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" VBox.vgrow="SOMETIMES">
+                     <children>
+                        <HBox alignment="CENTER" spacing="8.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <VBox alignment="CENTER" style="-fx-border-color: black;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <VBox alignment="CENTER" spacing="10.0" VBox.vgrow="NEVER">
+                                             <children>
+                                                <Label text="Connection Window">
+                                                   <font>
+                                                      <Font size="13.0" />
+                                                   </font>
+                                                </Label>
+                                                <HBox alignment="CENTER" spacing="10.0">
+                                                   <children>
+                                                      <Button fx:id="b_standard_connect" mnemonicParsing="false" onAction="#bStandardConnect" text="Standard-Connect" />
+                                                      <Button fx:id="b_custom_connect" mnemonicParsing="false" onAction="#bCustomConnect" prefHeight="26.0" prefWidth="113.0" text="Custom-Connect" />
+                                                   </children>
+                                                </HBox>
+                                                <Button fx:id="b_disconnect" mnemonicParsing="false" onAction="#bDisconnect" prefHeight="26.0" prefWidth="114.0" text="Disconnect" />
+                                             </children>
+                                             <opaqueInsets>
+                                                <Insets left="200.0" />
+                                             </opaqueInsets>
+                                          </VBox>
+                                          <VBox spacing="10.0">
+                                             <children>
+                                                <RadioButton fx:id="b_connected" contentDisplay="RIGHT" mnemonicParsing="false" prefHeight="18.0" prefWidth="82.0" text="Connected" wrapText="true">
+                                                   <cursor>
+                                                      <Cursor fx:constant="DEFAULT" />
+                                                   </cursor>
+                                                </RadioButton>
+                                                <HBox spacing="20.0">
+                                                   <children>
+                                                      <RadioButton fx:id="b_datafarm" mnemonicParsing="false" text="Datafarm-Connection" />
+                                                      <RadioButton fx:id="b_databank" mnemonicParsing="false" text="Databank" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" spacing="60.0">
+                                                   <children>
+                                                      <Label prefHeight="18.0" prefWidth="106.0" text="ClienetID-Number :" />
+                                                      <Label fx:id="b_clienetId" text="xx" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <VBox alignment="CENTER_LEFT" style="-fx-border-color: black;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <HBox alignment="CENTER_LEFT" spacing="20.0">
+                                             <children>
+                                                <Label text="Currently used Strats" />
+                                                <Label fx:id="b_usedStrats_Num" style="-fx-background-radius: 5; -fx-background-color: White; -fx-border-color: lightGrey; -fx-border-radius: 5;" text="123" wrapText="true">
+                                                   <padding>
+                                                      <Insets left="5.0" right="5.0" top="1.0" />
+                                                   </padding>
+                                                </Label>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <Label fx:id="b_usedStrats_str" text="abc, def, hij, bla bla bla" />
+                                          <HBox prefHeight="100.0" prefWidth="200.0" />
+                                          <HBox alignment="CENTER_LEFT">
+                                             <children>
+                                                <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" spacing="5.0">
+                                                   <children>
+                                                      <Label text="Best Strat :" />
+                                                      <Label text="Worst Strat :" />
+                                                   </children>
+                                                </VBox>
+                                                <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" spacing="5.0">
+                                                   <children>
+                                                      <Label fx:id="b_bestStrat" text="BEST STRAT" textFill="#026902" />
+                                                      <Label fx:id="b_worstStrat" text="WORST STRAT" textFill="#810000" />
+                                                   </children>
+                                                </VBox>
+                                             </children>
+                                          </HBox>
+                                          <VBox alignment="CENTER">
+                                             <children>
+                                                <Label text="Overall Winrates :" />
+                                                <HBox alignment="CENTER" spacing="10.0">
+                                                   <children>
+                                                      <VBox alignment="CENTER">
+                                                         <children>
+                                                            <Label text="Daily" />
+                                                            <Label fx:id="b_winDaily" style="-fx-background-radius: 5; -fx-background-color: White; -fx-border-color: lightGrey; -fx-border-radius: 5;" text="50,0%" wrapText="true">
+                                                               <VBox.margin>
+                                                                  <Insets />
+                                                               </VBox.margin>
+                                                               <padding>
+                                                                  <Insets left="5.0" right="5.0" top="3.0" />
+                                                               </padding>
+                                                            </Label>
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox alignment="CENTER">
+                                                         <children>
+                                                            <Label text="Weekly" />
+                                                            <Label fx:id="b_winWeekly" style="-fx-background-radius: 5; -fx-background-color: White; -fx-border-color: lightGrey; -fx-border-radius: 5;" text="55,0%" wrapText="true">
+                                                               <padding>
+                                                                  <Insets left="5.0" right="5.0" top="3.0" />
+                                                               </padding>
+                                                            </Label>
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox alignment="CENTER">
+                                                         <children>
+                                                            <Label text="Monthly" />
+                                                            <Label fx:id="b_winMonthly" style="-fx-background-radius: 5; -fx-background-color: White; -fx-border-color: lightGrey; -fx-border-radius: 5;" text="52,0%" wrapText="true">
+                                                               <padding>
+                                                                  <Insets left="5.0" right="5.0" top="3.0" />
+                                                               </padding>
+                                                            </Label>
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <VBox alignment="CENTER" spacing="5.0" style="-fx-border-color: black;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <HBox alignment="CENTER">
+                                             <children>
+                                                <Label text="Threadcount :" />
+                                                <Label fx:id="b_threadCount" text="123" textFill="#0006ff" />
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER">
+                                             <children>
+                                                <Button fx:id="b_showWatchlist" mnemonicParsing="false" onAction="#bShowWatchlist" text="Show Watchlist" />
+                                                <TextField fx:id="b_watchlistInput" prefHeight="26.0" prefWidth="106.0" promptText="Watchlist Input" />
+                                                <Button fx:id="b_updateWatchlist" mnemonicParsing="false" onAction="#bUpdate" text="Update" />
+                                             </children>
+                                          </HBox>
+                                          <TextArea fx:id="b_notes" prefHeight="126.0" prefWidth="265.0" promptText="Notizen" />
+                                       </children>
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                           <padding>
+                              <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                           </padding>
+                        </HBox>
+                     </children>
+                  </AnchorPane>
+                  <Pane fx:id="b_window" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: black;" VBox.vgrow="ALWAYS">
+                     <VBox.margin>
+                        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                     </VBox.margin>
+                  </Pane>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </VBox>
+            <VBox alignment="TOP_CENTER" minWidth="300.0" prefWidth="300.0" HBox.hgrow="SOMETIMES">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-border-color: black;">
+                     <children>
+                        <Label text="Bankdata">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="5.0" />
+                           </VBox.margin>
+                        </Label>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                           <children>
+                              <VBox prefHeight="176.0" prefWidth="118.0">
+                                 <children>
+                                    <Label text="Balance :" />
+                                    <Label text="Performance total :" />
+                                    <Label text="Cash in Positions :" />
+                                    <Label text="Average ROI % :" />
+                                    <Label text="Total ROI :" />
+                                    <Label text="Average ROI :" />
+                                    <Label text="Tax + Fees : " />
+                                    <Label text="Positions total :" />
+                                    <Label text="Positions open :" />
+                                    <Label text="Positionen in Beobachtung ?? :" />
+                                 </children>
+                              </VBox>
+                              <VBox prefHeight="200.0" prefWidth="100.0">
+                                 <children>
+                                    <Label fx:id="b_balance" text=" -- " />
+                                    <Label fx:id="b_performanceTotal" text="1.000,00" />
+                                    <Label fx:id="b_cashInPositions" text="100,00" />
+                                    <Label fx:id="b_averagePercent" text="0,00 %" />
+                                    <Label fx:id="b_totalROI" text="-1.000,00" />
+                                    <Label fx:id="b_averageROI" text="1.000,00" />
+                                    <Label fx:id="b_taxAndFees" text="1.235,79" />
+                                    <Label fx:id="b_positionsTotal" text="123" />
+                                    <Label fx:id="b_positionsOpen" text="000" />
+                                    <Label fx:id="b_positionsWatched" text="000" />
+                                 </children>
+                              </VBox>
+                           </children>
+                           <padding>
+                              <Insets left="5.0" right="5.0" />
+                           </padding>
+                        </HBox>
+                        <MenuButton mnemonicParsing="false" onAction="#bShowPositions" text="Show Positions">
+                          <items>
+                            <MenuItem mnemonicParsing="false" text="Action 1" />
+                            <MenuItem mnemonicParsing="false" text="Action 2" />
+                          </items>
+                           <VBox.margin>
+                              <Insets bottom="2.0" />
+                           </VBox.margin>
+                        </MenuButton>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                     </VBox.margin>
+                  </VBox>
+                  <TextArea fx:id="b_logWindow" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: black;" VBox.vgrow="ALWAYS">
+                     <VBox.margin>
+                        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                     </VBox.margin>
+                  </TextArea>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
